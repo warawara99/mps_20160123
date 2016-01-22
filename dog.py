@@ -9,9 +9,7 @@ def dog(scale_space):
     for octave in scale_space:
         doged_space.append([])
         for l in range(1, len(octave)):
-            doged_image = octave[l] - octave[l - 1]
-            doged_image[doged_image < 0] = 0
-            doged_space[-1].append(doged_image)
+            doged_space[-1].append(octave[l] - octave[l - 1])
     return np.array(doged_space)
 
 
